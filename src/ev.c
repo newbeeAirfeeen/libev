@@ -1865,6 +1865,9 @@ fd_valid(int fd) {
 #ifdef _WIN32
     return EV_FD_TO_WIN32_HANDLE(fd) != -1;
 #else
+
+#undef fcntl
+
     return fcntl(fd, F_GETFD) != -1;
 #endif
 }
