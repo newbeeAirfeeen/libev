@@ -2099,6 +2099,7 @@ evpipe_init(EV_P) {
 
         if (evpipe[1] < 0)
             evpipe[1] = fds[1]; /* first call, set write fd */
+#if !defined(ENABLE_XRADIO_872_SDK)
         else {
             /* on subsequent calls, do not change evpipe [1] */
             /* so that evpipe_write can always rely on its value. */
@@ -2108,7 +2109,7 @@ evpipe_init(EV_P) {
             dup2(fds[1], evpipe[1]);
             close(fds[1]);
         }
-
+#endif
         ev_io_set(&pipe_w, evpipe[0] < 0 ? evpipe[1] : evpipe[0], EV_READ);
         ev_io_start(EV_A_ & pipe_w);
         ev_unref(EV_A); /* watcher should not keep loop alive */
