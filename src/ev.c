@@ -182,7 +182,9 @@
 #include <time.h>
 
 #include <signal.h>
-
+#if defined(ENABLE_XRADIO_872_SDK)
+#include "pipe.h"
+#endif
 #ifdef EV_H
 #include EV_H
 #else

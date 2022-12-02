@@ -126,3 +126,4 @@
 
 /* Version number of package */
 #define VERSION "@version_major@.@version_minor@"
+

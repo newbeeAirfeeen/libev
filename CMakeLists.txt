@@ -56,7 +56,9 @@ check_function_exists(poll HAVE_POLL)
 check_function_exists(port_create HAVE_PORT_CREATE)
 check_function_exists(select HAVE_SELECT)
 check_function_exists(signalfd HAVE_SIGNALFD)
-
+if(HAVE_PIPE)
+	add_definitions(-DHAVE_PIPE)
+endif()
 # check system library
 check_library_exists(rt pthread_create "" HAVE_LIBRT)
 
@@ -71,6 +73,10 @@ set(libtype STATIC)
 set(src
 	"src/ev.c"
 	"src/event.c")
+
+if(ENABLE_XRADIO_872_SDK)
+	list(APPEND src platform/xr872/pipe.c)
+endif()
 
 if(WIN32)
 	list(APPEND platformlibs "wsock32.lib" "ws2_32.lib")
