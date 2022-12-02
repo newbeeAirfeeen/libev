@@ -163,8 +163,12 @@
 #endif
 
 #endif
-
+#if defined(ENABLE_XRADIO_872_SDK)
+#include <sys/_default_fcntl.h>
+#else
 #include <fcntl.h>
+#endif
+
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
