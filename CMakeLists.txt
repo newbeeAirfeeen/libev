@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.16)
-project(libev C)
+project(ev C)
 
 option(ENABLE_EXAMPLE "enable example" ON)
 option(ENABLE_XRADIO_872_SDK "mbed on xradio-872 platform" ON)
@@ -17,7 +17,7 @@ set(package_bugreport "")
 set(package_bugreport "")
 set(libtool_objdir ".libs")
 
-set(libname "libev")
+set(libname ${PROJECT_NAME})
 set(version_major "4")
 set(version_minor "15")
 
