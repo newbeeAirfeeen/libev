@@ -2376,6 +2376,8 @@ int inline_size ecb_cold
 enable_secure(void) {
 #ifdef _WIN32
     return 0;
+#elif ENABLE_XRADIO_872_SDK
+    return 0;
 #else
     return getuid() != geteuid() || getgid() != getegid();
 #endif
