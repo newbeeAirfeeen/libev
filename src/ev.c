@@ -2494,7 +2494,7 @@ loop_init(EV_P_ unsigned int flags) EV_THROW {
 #endif
 
         /* pid check not overridable via env */
-#ifndef _WIN32
+#if !defined(_WIN32) && !defined(ENABLE_XRADIO_872_SDK)
         if (flags & EVFLAG_FORKCHECK)
             curpid = getpid();
 #endif
