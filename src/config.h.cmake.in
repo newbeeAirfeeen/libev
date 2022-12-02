@@ -13,10 +13,10 @@
 #cmakedefine HAVE_EPOLL_CTL 1
 
 /* Define to 1 if you have the `eventfd' function. */
-#cmakedefine HAVE_EVENTFD 1
+#cmakedefine HAVE_EVENTFD 0
 
 /* Define to 1 if the floor function is available */
-#cmakedefine HAVE_FLOOR 1
+#cmakedefine HAVE_FLOOR 0
 
 /* Define to 1 if you have the `inotify_init' function. */
 #cmakedefine HAVE_INOTIFY_INIT 1
@@ -34,7 +34,7 @@
 #cmakedefine HAVE_MEMORY_H 1
 
 /* Define to 1 if you have the `nanosleep' function. */
-#cmakedefine HAVE_NANOSLEEP 1
+#cmakedefine HAVE_NANOSLEEP 0
 
 /* Define to 1 if you have the `poll' function. */
 #cmakedefine HAVE_POLL 1
