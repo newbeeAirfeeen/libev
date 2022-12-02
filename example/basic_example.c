@@ -6,14 +6,12 @@
 void timer_action(struct ev_loop *main_loop,ev_timer *timer_w,int e)
 {
     printf("hello,world\n");
+
 }
 int main(){
-
-    ev_io io;
     ev_timer timer;
-    ev_signal sig;
     struct ev_loop* loop = ev_default_loop(0);
-    ev_timer_init(&timer, timer_action, 1, 1);
+    ev_timer_init(&timer, timer_action, 5, 5);
 
 
     ev_timer_start(loop, &timer);
