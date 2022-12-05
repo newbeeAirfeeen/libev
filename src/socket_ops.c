@@ -2,8 +2,12 @@
 // Created by 沈昊 on 2022/12/5.
 //
 #include "socket_ops.h"
+#if ENABLE_XRADIO_872_SDK
+#include <lwip/sockets.h>
+#else
 #include <fcntl.h>
 #include <sys/ioctl.h>
+#endif
 int make_fd_nonblock(int fd, int non_blocking) {
 #if defined(_WIN32)
     unsigned long ul = noblock;
