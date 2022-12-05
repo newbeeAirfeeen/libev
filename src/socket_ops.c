@@ -4,6 +4,7 @@
 #include "socket_ops.h"
 #if ENABLE_XRADIO_872_SDK
 #include <lwip/sockets.h>
+#include <sys/_default_fcntl.h>
 #else
 #include <fcntl.h>
 #include <sys/ioctl.h>
@@ -22,6 +23,7 @@ int make_fd_nonblock(int fd, int non_blocking) {
 }
 
 int make_fd_close_exec(int fd, int on) {
+#undef fcntl
 #if !defined(_WIN32)
     int flags = fcntl(fd, F_GETFD);
     if (flags == -1) {
