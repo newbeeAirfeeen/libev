@@ -5,7 +5,8 @@
 #include "event_loop.h"
 #include "stdio.h"
 void run(void *instance, void *args) {
-    printf("yes, it is\n");
+    static int val = 1;
+    printf("yes, it is %d\n", val++);
     event_loop_async(instance, run, NULL);
 }
 int main() {
