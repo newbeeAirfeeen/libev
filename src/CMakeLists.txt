@@ -59,6 +59,10 @@ list(APPEND include_dirs "${CMAKE_CURRENT_BINARY_DIR}")
 set(libtype STATIC)
 
 set(src
+	"list.c"
+	"list_iterator.c"
+	"list_node.c"
+	"event_loop.c"
 	"ev.c"
 	"event.c")
 
