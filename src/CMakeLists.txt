@@ -62,6 +62,7 @@ set(src
 	"list.c"
 	"list_iterator.c"
 	"list_node.c"
+	"socket_ops.c"
 	"event_loop.c"
 	"ev.c"
 	"event.c")

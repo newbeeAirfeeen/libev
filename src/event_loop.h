@@ -11,7 +11,9 @@ extern "C" {
 
 void *event_loop_create();
 int event_loop_run(void *instance);
-void event_loop_destroy();
+int event_loop_stop(void *instance);
+int event_loop_async(void *instance, void (*p)(void *loop, void *args), void *args);
+void event_loop_destroy(void *instance);
 
 #ifdef __cplusplus
 };
