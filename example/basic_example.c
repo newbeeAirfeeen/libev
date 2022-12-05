@@ -3,9 +3,7 @@
 //
 #include <stdio.h>
 #include <ev.h>
-#include <event_loop.h>
-void timer_action(struct ev_loop *main_loop,ev_timer *timer_w,int e)
-{
+void timer_action(struct ev_loop *main_loop,ev_timer *timer_w,int e){
     printf("hello,world\n");
 }
 int main(){
@@ -16,9 +14,9 @@ int main(){
 
 
     struct ev_loop* loop = ev_default_loop(0);
-    //ev_timer_init(&timer, timer_action, 1, 1);
-    //ev_timer_start(loop, &timer);
-    ev_t
+    ev_timer_init(&timer, timer_action, 1, 1);
+    ev_timer_start(loop, &timer);
+    //ev_t
     ev_run(loop, 0);
     return 0;
 }
